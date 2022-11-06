@@ -1,0 +1,7 @@
+{
+  "name": "cacao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
