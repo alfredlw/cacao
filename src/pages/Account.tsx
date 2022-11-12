@@ -1,24 +1,20 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab3.css';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
-const Tab3: React.FC = () => {
+const Account: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className='ion-no-border'>
         <IonToolbar>
-          <IonTitle>Mon compte</IonTitle>
+          <IonButtons slot='start'>
+            <IonBackButton defaultHref='/home' />
+          </IonButtons>
+          <IonTitle className='font-lato'>Mon compte</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Mon compte</IonTitle>
-          </IonToolbar>
-        </IonHeader>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab3;
+export default Account;
