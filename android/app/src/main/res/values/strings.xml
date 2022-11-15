@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cacaotech</string>
+    <string name="title_activity_main">cacaotech</string>
+    <string name="package_name">io.cacao.app</string>
+    <string name="custom_url_scheme">io.cacao.app</string>
+</resources>
