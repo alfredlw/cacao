@@ -7,13 +7,13 @@ import { useDeaseses } from "../context/diseases"
 import { Share } from "@capacitor/share";
 
 
-const Result: React.FC = () => {
+const MagicResult: React.FC = () => {
     const {push} =  useHistory()
     const { q1, q2, q3, reset, save } = useGlobalContext()
     const { pourriture, moniliose, anthracnose } = useDeaseses()
 
     const endDiagnostic = ()=>{
-        save && save()
+        save&&save()
         reset && reset()
         push('/home')
     }
@@ -36,40 +36,16 @@ const Result: React.FC = () => {
                 {/* <IonTitle className='font-lato'>Resultat du diagnostique</IonTitle> */}
             </IonToolbar>
             <IonToolbar>
-            <IonTitle className='font-lato font-extrabold text-3xl'>Resultat</IonTitle>
+            <IonTitle className='font-lato font-extrabold text-3xl'>Resultat magique</IonTitle>
             <p className="text-xs px-5 text-gray-300">D'apres les informations que vous avez fournie pendant le diagnostique:</p>
             <div className="px-4 pt-5 pb-3">
-            <h1 className="font-lato font-bold text-lg text-yellow-600">Maladie(s)</h1>
+            {/* <h1 className="font-lato font-bold text-lg text-yellow-600">Maladie(s)</h1> */}
           
-            <div className=" mt-2 bg-red-50 px-3 py-3 rounded-xl">
-                {q1 && q1?.length > 1 && (
-                  <div className=" text-gray-600 bg-red-100 max-w-fit  py-2 px-3 rounded-full flex items-center space-x-2">
-                    <div className="bg-white h-6 w-6 rounded-full flex justify-center items-center">
-                    <IonThumbnail className="h-4 w-4">
-                        <IonImg src='/assets/images/alarm.png' className="h-4 w-4"/>
-                    </IonThumbnail>
-                    </div>
-                    <p className="font-lato font-bold ">{pourriture.name}</p>
-                  </div>
-                )}
-                {q2 && q2?.length > 1 && (
-                  <div className=" text-gray-600 bg-red-100 max-w-fit  py-2 px-3 mt-2 rounded-full flex items-center space-x-2">
-                        <div className="bg-white h-6 w-6 rounded-full flex justify-center items-center">
-                       <IonThumbnail className="h-6 w-6">
-                        <IonImg src='/assets/images/alarm.png' className="h-6 w-6"/>
-                    </IonThumbnail>
-                    </div>
-                    <p className="font-lato font-bold ">{moniliose.name}</p>
-                  </div>
-                )}
-                {q3 && q3?.length > 1 && (
-                  <div className=" text-gray-600 bg-red-100 max-w-fit  py-2 px-3 mt-2 rounded-full flex items-center space-x-2">
-                       <div className="bg-white h-6 w-6 rounded-full flex justify-center items-center">
-                     <IonThumbnail className="h-6 w-6">
-                        <IonImg src='/assets/images/alarm.png' className="h-6 w-6"/>
-                    </IonThumbnail>
-                    </div>
-                  <p className="font-lato font-bold ">{anthracnose.name}</p>
+            <div className=" mt-2 bg-blue-50 px-3 py-3 rounded-xl">
+                {(
+                  <div className=" text-blue-600 bg-blue-100 max-w-fit  py-2 px-3 rounded-lg flex items-center space-x-2">
+                   
+                    <p className="font-lato font-bold ">Merci d'avoir essayer. Nous ameliorons le service pour un meilleur resultat</p>
                   </div>
                 )}
             </div>
@@ -81,13 +57,13 @@ const Result: React.FC = () => {
             
             <div className="mx-4 px-3 pt-3 pb-4 mb-10  bg-green-50 rounded-xl">
                 <ul className="mt-3">
-                    {q1 && q1?.length > 1 && (
+                    {q1 && (
                         pourriture.remedies.map((item) => <RemedyItem key={item} remedyDescription={item} />)
                     )}
-                     {q2 && q2?.length > 1 && (
+                     {q2 && (
                         pourriture.remedies.map((item) => <RemedyItem key={item} remedyDescription={item} />)
                     )}
-                     {q3 && q3?.length > 1 && (
+                     {q3 && (
                         pourriture.remedies.map((item) => <RemedyItem key={item} remedyDescription={item} />)
                     )}
                 </ul>
@@ -110,4 +86,4 @@ const Result: React.FC = () => {
 
 }
 
-export default Result
+export default MagicResult

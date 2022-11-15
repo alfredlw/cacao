@@ -48,6 +48,8 @@ import Step3 from './pages/step3';
 import AppProvider from './context/context';
 import Result from './pages/result';
 import Capture from './pages/capture';
+import NoResult from './pages/noResult';
+import MagicResult from './pages/magicResult';
 
 setupIonicReact();
 
@@ -70,6 +72,8 @@ const App: React.FC = () => (
         <Route path="/step3" component={Step3}/>
         <Route path="/capture" component={Capture}/>
         <Route path="/result" component={Result}/>
+        <Route path="/noresult" component={NoResult}/>
+        <Route path="/magicresult" component={MagicResult} />
         
         {/* <IonTabs>
         <IonRouterOutlet>

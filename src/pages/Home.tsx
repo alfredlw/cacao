@@ -1,13 +1,16 @@
-import { IonButton, IonButtons, IonContent, IonFab, IonFabButton, IonFabList, IonFooter, IonHeader, IonIcon, IonImg, IonLabel, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { add, bookOutline, informationOutline, personOutline, scan } from 'ionicons/icons';
 import { useHistory } from 'react-router';
+import DiagnosticList from '../components/diagnostics';
 import EmptyList from '../components/diagnostics/emptyList';
+import { useGlobalContext } from '../context';
 
 
 
 const Tab2: React.FC = () => {
 
   const { push } = useHistory()
+  const { diagnostics } = useGlobalContext()
 
   return (
     <IonPage>
@@ -34,7 +37,7 @@ const Tab2: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         
-        <EmptyList/>
+        {(diagnostics && diagnostics?.length > 0)?<DiagnosticList diagnostics={diagnostics}/>:<EmptyList/>}
         
         <IonFab slot='fixed' edge={true} horizontal='end' vertical='bottom' className='mb-10'>
           <IonFabButton className="" ><IonIcon icon={add} /></IonFabButton>

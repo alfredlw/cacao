@@ -1,5 +1,5 @@
 import { IonBackButton, IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonIcon, IonImg, IonLabel, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
-import { chevronBack, chevronForward } from "ionicons/icons"
+import {  chevronForward } from "ionicons/icons"
 import { useHistory } from "react-router"
 
 
